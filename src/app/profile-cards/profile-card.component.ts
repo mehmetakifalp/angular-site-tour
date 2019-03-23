@@ -1,9 +1,8 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'profile-card',
   templateUrl:'profile-card.component.html',
-  encapsulation:ViewEncapsulation.None,
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ProfileCardComponent {
@@ -18,6 +17,22 @@ export class ProfileCardComponent {
   cardText: string = 'Some example text some example text. John Doe is an architect and engineer';
 
   @Input()
-  cardUrl: string = 'http://www.google.com'
+  cardUrl: string = 'http://www.google.com';
+
+  @ViewChild('first') first: ElementRef;
+
+
+  constructor(private renderer: Renderer2){
+
+  }
+
+
+  startTour(){
+    this.renderer.addClass(document.body, 'hide');
+  }
+
+  ngAfterViewInit(): void {
+    this.renderer.setStyle(this.first.nativeElement, 'border', '5px solid');
+  }
 
 }
