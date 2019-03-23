@@ -1,4 +1,4 @@
-import { Component, TrackByFunction } from '@angular/core';
+import { Component, TrackByFunction, ElementRef, ViewChildren, QueryList } from '@angular/core';
 export interface People{
   cardImg: string;
   cardTitle: string;
@@ -12,7 +12,10 @@ export interface People{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-site-tour';
+  title = 'Angular Site Tour Plugin';
+
+  @ViewChildren('slides') slides: QueryList<any>;
+
 
 
   peoples: People[] = [
@@ -29,8 +32,13 @@ export class AppComponent {
       cardTitle: 'Her Doe',
       cardText: 'Short description about her',
       cardUrl: 'http://www.google.com'
-    },
+    }
   ];
 
+
+  ngAfterViewInit(): void {
+
+        console.log(this.slides.toArray().filter(s => console.log(s)));
+  }
 
 }
