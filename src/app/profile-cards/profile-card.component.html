@@ -1,21 +1,39 @@
-<button type="button" class="btn btn-primary" (click)="startTour()">Start</button>
+<button type="button" class="btn btn-primary" (click)="next(first)">Start</button>
 
 <div class="card" style="width:400px">
-    <img class="card-img-top" [src]="cardImg" [alt]="cardTitle" style="width:100%"  #first [tooltip]="template"  triggers="mouseenter:click" >
+    <img class="card-img-top" [src]="cardImg" [alt]="cardTitle" style="width:100%"  #first="bs-tooltip" [tooltip]="firstTemplate"  triggers="" >
     <div class="card-body">
-      <h4 class="card-title" #second  [tooltip]="secondTemplate"  triggers="mouseenter:click" >{{ cardTitle }}</h4>
-      <p class="card-text"  #third [tooltip]="thirdTemplate"  triggers="mouseenter:click" >{{ cardText }}</p>
+      <h4 class="card-title" #second="bs-tooltip" [tooltip]="secondTemplate"  triggers="">{{ cardTitle }}</h4>
+      <p class="card-text"  #third="bs-tooltip" [tooltip]="thirdTemplate"  triggers="">{{ cardText }}</p>
       <a [href]="cardUrl" class="btn btn-primary" target="_blank"  #fifth>{{ cardUrl }}</a>
     </div>
   </div>
 
 
-  <ng-template #template>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  <ng-template #firstTemplate>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 
-      <ng-template #footerTemplate>
-          <button type="button" (click)="next()">Next</button>
-      </ng-template>
+      <ng-container #footerTemplate>
+          <button type="button"  (click)="next(second)">Next</button>
+      </ng-container>
 
   </ng-template>
 
+
+  <ng-template #secondTemplate> Second Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      <ng-container #footerTemplate>
+          <button type="button"  (click)="next(third)">Next</button>
+      </ng-container>
+
+  </ng-template>
+
+
+
+  <ng-template #thirdTemplate> Third Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      <ng-container #footerTemplate>
+          <button type="button"  (click)="next(first)">Next</button>
+      </ng-container>
+
+  </ng-template>
 

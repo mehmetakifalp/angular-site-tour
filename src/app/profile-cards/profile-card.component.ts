@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, ViewChild, Renderer2, TemplateRef } from '@angular/core';
+import { TooltipDirective } from 'ngx-bootstrap/tooltip/public_api';
 export interface Step{
-  id: string,
+  stepId: string,
   title: string,
   content: string
 }
@@ -26,15 +27,15 @@ export class ProfileCardComponent {
 
   @Input()
   steps: Step[] = [{
-    id: "#first",
+    stepId: "first",
     title: "First Title",
     content: "First Content"
   }, {
-    id: "#second",
+    stepId: "second",
     title: "Second Title",
     content: "Second Content"
   }, {
-    id: "#third",
+    stepId: "third",
     title: "Third Title",
     content: "Third Content"
   }];
@@ -64,7 +65,9 @@ export class ProfileCardComponent {
     this.renderer.addClass(document.body, 'hide');
   }
 
-  next(){
+  next(step:TooltipDirective){
+
+    step.toggle();
 
   }
 
