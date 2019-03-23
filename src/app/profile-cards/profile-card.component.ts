@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, ViewChild, Renderer2, TemplateRef } from '@angular/core';
 export interface Step{
   id: string,
   title: string,
@@ -37,7 +37,10 @@ export class ProfileCardComponent {
     id: "#third",
     title: "Third Title",
     content: "Third Content"
-  }, ]
+  }];
+
+  @Input()
+  footerTemplate: TemplateRef<any>;
 
 
   @ViewChild('first') first: ElementRef;

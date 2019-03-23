@@ -10,6 +10,12 @@
   </div>
 
 
-  <ng-template #template>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button type="button" (click)="next()">Next</button></ng-template>
-  <ng-template #secondTemplate>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button type="button" (click)="next()">Next</button></ng-template>
-  <ng-template #thirdTemplate>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button type="button" (click)="next()">Next</button></ng-template>
+  <ng-template #template>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      <ng-template #footerTemplate>
+          <button type="button" (click)="next()">Next</button>
+      </ng-template>
+
+  </ng-template>
+
+
