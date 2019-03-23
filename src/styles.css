@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-.hide{
-  opacity: 0.1;
+
+.selected{
+  border:10px solid red;
+}
+
+.tooltip {
+  display: block;
+  pointer-events: visible !important;
 }

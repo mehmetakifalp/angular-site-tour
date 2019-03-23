@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileCardComponent } from './profile-cards/profile-card.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { ProfileCardComponent } from './profile-cards/profile-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

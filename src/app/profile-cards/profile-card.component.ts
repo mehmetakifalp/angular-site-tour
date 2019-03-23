@@ -19,6 +19,7 @@ export class ProfileCardComponent {
   @Input()
   cardUrl: string = 'http://www.google.com';
 
+
   @ViewChild('first') first: ElementRef;
 
 
@@ -26,13 +27,20 @@ export class ProfileCardComponent {
 
   }
 
+  ngAfterViewInit(): void {
+
+  }
+
 
   startTour(){
+    this.started = true;
+    this.renderer.addClass(this.first.nativeElement, 'selected');
     this.renderer.addClass(document.body, 'hide');
   }
 
-  ngAfterViewInit(): void {
-    this.renderer.setStyle(this.first.nativeElement, 'border', '5px solid');
+  next(){
+    alert();
   }
+
 
 }

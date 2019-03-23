@@ -1,10 +1,18 @@
 <button type="button" class="btn btn-primary" (click)="startTour()">Start</button>
 
 <div class="card" style="width:400px">
-    <img class="card-img-top" [src]="cardImg" [alt]="cardTitle" style="width:100%"  #first>
-    <div class="card-body" #second>
-      <h4 class="card-title" #third>{{ cardTitle }}</h4>
+    <img class="card-img-top" [src]="cardImg" [alt]="cardTitle" style="width:100%"  #first [tooltip]="firstTemplate"  triggers="mouseenter:click">
+    <div class="card-body" #second >
+      <h4 class="card-title" #third >{{ cardTitle }}</h4>
       <p class="card-text"  #fourth>{{ cardText }}</p>
       <a [href]="cardUrl" class="btn btn-primary" target="_blank"  #fifth>{{ cardUrl }}</a>
     </div>
   </div>
+
+
+  <ng-template #firstTemplate>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      <button type="button" (click)="next()">Next</button>
+
+
+    </ng-template>
