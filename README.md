@@ -3,7 +3,7 @@ Angular Site Tour Plugin helps you to create Intro/Demo interface for your angul
 
 
 
-[SCREENSHOT](https://user-images.githubusercontent.com/2241517/54872543-afd7b400-4dd6-11e9-9bdd-c797c1ff0298.png)
+![SCREENSHOT](https://user-images.githubusercontent.com/2241517/54872543-afd7b400-4dd6-11e9-9bdd-c797c1ff0298.png)
 
 
 ## Setup
