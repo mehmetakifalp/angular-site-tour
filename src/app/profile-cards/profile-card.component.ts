@@ -32,14 +32,17 @@ export class ProfileCardComponent {
   }
 
 
+  started():boolean{
+    return false;
+  }
+
   startTour(){
-    this.started = true;
     this.renderer.addClass(this.first.nativeElement, 'selected');
     this.renderer.addClass(document.body, 'hide');
   }
 
   next(){
-    alert();
+
   }
 
 
