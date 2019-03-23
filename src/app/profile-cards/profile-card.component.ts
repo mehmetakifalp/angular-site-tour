@@ -1,5 +1,9 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, ViewChild, Renderer2 } from '@angular/core';
-
+export interface Step{
+  id: string,
+  title: string,
+  content: string
+}
 @Component({
   selector: 'profile-card',
   templateUrl:'profile-card.component.html',
@@ -18,6 +22,22 @@ export class ProfileCardComponent {
 
   @Input()
   cardUrl: string = 'http://www.google.com';
+
+
+  @Input()
+  steps: Step[] = [{
+    id: "#first",
+    title: "First Title",
+    content: "First Content"
+  }, {
+    id: "#second",
+    title: "Second Title",
+    content: "Second Content"
+  }, {
+    id: "#third",
+    title: "Third Title",
+    content: "Third Content"
+  }, ]
 
 
   @ViewChild('first') first: ElementRef;
