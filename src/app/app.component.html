@@ -2,10 +2,8 @@
 
 <div class="row">
 
-<div class="col" *ngFor="let people of peoples;">
-
+<div class="col" *ngFor="let people of peoples; trackBy: people.id">
   <profile-card [cardTitle]="people.cardTitle" [cardImg]="people.cardImg" [cardText]="people.cardText" [cardUrl]="people.cardUrl"></profile-card>
-
 
 </div>
 
